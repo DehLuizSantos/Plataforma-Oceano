@@ -1,5 +1,14 @@
-function HomePage() {
-  return <div>Welcome to Next.js!</div>;
-}
+import type { ReactElement } from "react";
+import Layout from "../templates/Layout";
+/* import NestedLayout from "../components/nested-layout"; */
+import type { NextPageWithLayout } from "./_app";
 
-export default HomePage;
+const Page: NextPageWithLayout = () => {
+  return <p>hello world</p>;
+};
+
+Page.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>;
+};
+
+export default Page;
