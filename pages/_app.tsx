@@ -1,13 +1,21 @@
+import { ReactElement, ReactNode, useEffect } from "react";
+import type { NextPage } from "next";
+import "bootstrap/dist/css/bootstrap.css";
+
 import type { AppProps } from "next/app";
-import GlobalStyles from "../styles/global";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <GlobalStyles />
-      <Component {...pageProps} />
-    </>
-  );
+export type NextPageWithLayout = NextPage & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  // Use the layout defined at the page level, if available
+
+  const getLayout = Component.getLayout ?? ((page) => page);
+
+  return getLayout(<Component {...pageProps} />);
 }
-
-export default MyApp;

@@ -1,5 +1,20 @@
-function HomePage() {
-  return <div>Welcome to Next.js!</div>;
-}
+import type { ReactElement } from "react";
+import ApplicationProviders from "../templates/AplicationProviders";
 
-export default HomePage;
+import type { NextPageWithLayout } from "./_app";
+import Container from "react-bootstrap/Container";
+import Home from "../modules/Home";
+
+const Page: NextPageWithLayout = () => {
+  return (
+    <Container>
+      <Home />
+    </Container>
+  );
+};
+
+Page.getLayout = function getLayout(page: ReactElement) {
+  return <ApplicationProviders>{page}</ApplicationProviders>;
+};
+
+export default Page;
