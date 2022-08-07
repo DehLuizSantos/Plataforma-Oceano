@@ -1,14 +1,20 @@
 import type { ReactElement } from "react";
-import Layout from "../templates/Layout";
-/* import NestedLayout from "../components/nested-layout"; */
+import ApplicationProviders from "../templates/AplicationProviders";
+
 import type { NextPageWithLayout } from "./_app";
+import Container from "react-bootstrap/Container";
+import Home from "../modules/Home";
 
 const Page: NextPageWithLayout = () => {
-  return <p>hello world</p>;
+  return (
+    <Container>
+      <Home />
+    </Container>
+  );
 };
 
 Page.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
+  return <ApplicationProviders>{page}</ApplicationProviders>;
 };
 
 export default Page;

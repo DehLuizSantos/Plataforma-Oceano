@@ -1,10 +1,14 @@
 import React from "react";
+import { Container } from "react-bootstrap";
+import * as S from "./styles";
 
 const Navbar: React.FC = () => {
   return (
-    <nav>
-      <h2>Navbar</h2>
-    </nav>
+    <S.NavbarContainer>
+      <Container>
+        <h2>Navbar</h2>
+      </Container>
+    </S.NavbarContainer>
   );
 };
 

@@ -1,5 +1,7 @@
-import type { ReactElement, ReactNode } from "react";
+import { ReactElement, ReactNode, useEffect } from "react";
 import type { NextPage } from "next";
+import "bootstrap/dist/css/bootstrap.css";
+
 import type { AppProps } from "next/app";
 
 export type NextPageWithLayout = NextPage & {
@@ -12,6 +14,7 @@ type AppPropsWithLayout = AppProps & {
 
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   // Use the layout defined at the page level, if available
+
   const getLayout = Component.getLayout ?? ((page) => page);
 
   return getLayout(<Component {...pageProps} />);
