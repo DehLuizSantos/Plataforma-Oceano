@@ -1,6 +1,7 @@
 import { ReactElement, ReactNode, useEffect } from "react";
 import type { NextPage } from "next";
 import "bootstrap/dist/css/bootstrap.css";
+import { wrapper } from "../redux/store/store";
 
 import type { AppProps } from "next/app";
 
@@ -12,10 +13,12 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
-export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   // Use the layout defined at the page level, if available
 
   const getLayout = Component.getLayout ?? ((page) => page);
 
   return getLayout(<Component {...pageProps} />);
 }
+
+export default wrapper.withRedux(MyApp);
