@@ -6,10 +6,11 @@ export const light = {
     secundary: "#0ba582",
     primary2: "#09tf9c",
     secundary2: "#4dbda4",
-    background:"#eefee6",
-    sheet: "#daffd1",
+    background:"#f7f7f7",
+    sheet: "#f1f4f8",
     danger: "#981616",
-    success: "#e9e91b"
+    success: "#e9e91b",
+    text: "#232629"
   },
   variants: {...theme}
 }

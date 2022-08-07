@@ -14,7 +14,7 @@ const GlobalStyles = createGlobalStyle`
     input,
     select,
     button {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Roboto', sans-serif;
       font-style: normal;
       background: transparent;
     }

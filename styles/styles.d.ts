@@ -43,6 +43,7 @@ declare module 'styled-components' {
       sheet: string
       danger: string
       success: string
+      text: string
     }
   }
 }
