@@ -7,7 +7,7 @@ export const light = {
     primary2: "#09tf9c",
     secundary2: "#4dbda4",
     background:"#f7f7f7",
-    sheet: "#f1f4f8",
+    sheet: "#e3dfe1",
     danger: "#981616",
     success: "#e9e91b",
     text: "#232629"
