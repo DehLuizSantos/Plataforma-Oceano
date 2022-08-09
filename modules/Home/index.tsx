@@ -6,6 +6,9 @@ import { useForm } from "react-hook-form";
 import { TaskProps, ComentsProps } from "./interface";
 import TaskInfos from "./taskInfos";
 import ComentsInfos from "./comentsInfos";
+import NextApi from "../../services/NextApi";
+
+const nextApi = new NextApi();
 
 const Home: React.FC = () => {
   const [task, setTask] = useState<TaskProps>();
@@ -17,23 +20,29 @@ const Home: React.FC = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data: any) => {
-    console.log(data);
-    setTask({
-      BRM: "exemplo",
-      Consultor: "andré",
-      Custos: "R$: 1250",
-      DataInicio: "16/02/2020",
-      Estimativa: "22/02/2022",
-      NumDemanda: "123456",
-      Previsao: "25/02/2022",
-      Status: "22%",
-      TempoConsumido: "2 horas",
-      TempoRestante: "4 horas",
-      Titulo: "demanda 1",
-      Filial: "São Paulo",
-      Squad: "Monsters",
-    });
+  const onSubmit = async (data: any) => {
+    try {
+      const body = {
+        BRM: "exemplo",
+        Consultor: "exemplo",
+        Custos: "exemplo",
+        DataInicio: "exemplo",
+        Estimativa: "exemplo",
+        NumDemanda: "exemplo",
+        Previsao: "exemplo",
+        Status: "exemplo",
+        TempoConsumido: "exemplo",
+        TempoRestante: "exemplo",
+        Titulo: "exemplo",
+        Filial: "exemplo",
+        Squad: "exemplo",
+      };
+      const result = await nextApi.postTask(body);
+      console.log(result);
+      setTask(result.data[0]);
+    } catch (err) {
+      console.log(err);
+    }
   };
   const onSearchComents = () => {
     const comentsMock = [
@@ -51,12 +60,11 @@ const Home: React.FC = () => {
     <S.ContainerHome>
       <h1>Pesquise a task</h1>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <S.FormGroupStyled controlId="formBasicEmail">
+        <S.FormGroupStyled controlId="form">
           <Form.Control
             type="text"
             placeholder="Digite o código da task"
-            {...register("example")}
-            defaultValue="test"
+            {...register("task")}
           />
           <Button variant="primary" type="submit">
             Enviar
