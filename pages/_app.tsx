@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, useEffect } from "react";
+import { ReactElement, ReactNode } from "react";
 import type { NextPage } from "next";
 import "bootstrap/dist/css/bootstrap.css";
 import { wrapper } from "../redux/store/store";

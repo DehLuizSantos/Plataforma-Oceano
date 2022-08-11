@@ -15,9 +15,9 @@ const Navbar: React.FC = () => {
             </div>
           </Link>
           <Link href={"/cadastrarTask"}>
-            <Button variant="outline-primary">Cadastrar Task</Button>
+            <Button variant="outline-primary">Cadastrar</Button>
           </Link>
-          <div className="navbar-user-image">
+          {/*  <div className="navbar-user-image">
             <Image
               src={"/user-default.png"}
               alt="exemplo"
@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
               height={40}
             />
             <Button variant="primary">Login</Button>
-          </div>
+          </div> */}
         </S.NavbarWhapper>
       </Container>
     </S.NavbarContainer>

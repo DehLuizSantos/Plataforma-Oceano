@@ -11,15 +11,12 @@ const GetByTitleTask = async (req: NextApiRequest, res: NextApiResponse) => {
 
   const { db } = await connectToDatabase()
   const collection = await db.collection("tasks")
+  //TODO: Pesquisar como fazer esse find funcionar (performance)
   const taskInfos = await collection.find(Titulo).toArray()
-
-  if(taskInfos.length === 0){
-    res.status(200).json("Nenhuma Task com esse titulo foi encontrada")
-  }
+  const taskFilter = taskInfos.filter((task: any) => task.Titulo === Titulo)
 
 
-
-  res.status(200).json(taskInfos)
+  res.status(200).json(taskFilter)
 
 };
 

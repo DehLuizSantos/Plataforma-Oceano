@@ -22,13 +22,13 @@ export default class NextApi {
   private http: AxiosInstance
   constructor() {
     this.http = axios.create({
-      baseURL: /* "http://localhost:3000/api" */"https://plataforma-oceano.vercel.app/api"
+      baseURL: process.env.BASE_URL
     })
   }
 
   public async getTaskByTitle(params: string) {
     try {
-      const response: AxiosResponse = await this.http.get(`${params}`)
+      const response: AxiosResponse = await this.http.get(`/api/${params}`)
       return { data: response.data, error: false }
     } catch (error: import('axios').AxiosError | any) {
       if (error.response) {
@@ -37,20 +37,10 @@ export default class NextApi {
       return { error: true }
     }
   }
-  public async getAllContries(contrie: string) {
-    try {
-      const response: AxiosResponse = await this.http.get(`contrie/${contrie}`)
-      return { data: response.data, error: false }
-    } catch (error: import('axios').AxiosError | any) {
-      if (error.response) {
-        return { statusCode: error.response.status, error: true }
-      }
-      return { error: true }
-    }
-  }
+
     public async postTask(body: PostBody) {
     try {
-      const response: AxiosResponse = await this.http.post(`post`, body)
+      const response: AxiosResponse = await this.http.post(`/api/postTask`, body)
       return { data: response.data, error: false }
     } catch (error: import('axios').AxiosError | any) {
       if (error.response) {
