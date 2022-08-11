@@ -22,7 +22,7 @@ export default class NextApi {
   private http: AxiosInstance
   constructor() {
     this.http = axios.create({
-      baseURL: /* "http://localhost:3000/api" */"https://plataforma-oceano.vercel.app/api/"
+      baseURL: /* "http://localhost:3000/api" */"https://plataforma-oceano.vercel.app/api"
     })
   }
 
