@@ -22,7 +22,9 @@ export default class NextApi {
   private http: AxiosInstance
   constructor() {
     this.http = axios.create({
-      baseURL: process.env.BASE_URL
+      baseURL: process.env.BASE_URL,
+      withCredentials: true
+
     })
   }
 
