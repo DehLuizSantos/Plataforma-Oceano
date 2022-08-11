@@ -7,10 +7,11 @@ export const light = {
     primary2: "#09tf9c",
     secundary2: "#4dbda4",
     background:"#f7f7f7",
-    sheet: "#e3dfe1",
+    sheet: "#afb4b9",
     danger: "#981616",
     success: "#e9e91b",
-    text: "#232629"
+    text: "#232629",
+    boxShadow: "#333436"
   },
   variants: {...theme}
 }

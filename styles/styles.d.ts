@@ -44,6 +44,7 @@ declare module 'styled-components' {
       danger: string
       success: string
       text: string
+      boxShadow: string
     }
   }
 }

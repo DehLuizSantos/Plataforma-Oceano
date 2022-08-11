@@ -12,7 +12,6 @@ const nextApi = new NextApi();
 
 const Home: React.FC = () => {
   const [task, setTask] = useState<TaskProps>();
-  const [coments, setComents] = useState<ComentsProps>();
 
   const {
     register,
@@ -22,49 +21,22 @@ const Home: React.FC = () => {
 
   const onSubmit = async (data: any) => {
     try {
-      const body = {
-        BRM: "exemplo",
-        Consultor: "exemplo",
-        Custos: "exemplo",
-        DataInicio: "exemplo",
-        Estimativa: "exemplo",
-        NumDemanda: "exemplo",
-        Previsao: "exemplo",
-        Status: "exemplo",
-        TempoConsumido: "exemplo",
-        TempoRestante: "exemplo",
-        Titulo: "exemplo",
-        Filial: "exemplo",
-        Squad: "exemplo",
-      };
-      const result = await nextApi.postTask(body);
-      console.log(result);
+      const result = await nextApi.getTaskByTitle(data.Titulo);
       setTask(result.data[0]);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
-  };
-  const onSearchComents = () => {
-    const comentsMock = [
-      { Comentario: "Aberto", DataComentario: "16/12/2022" },
-      { Comentario: "Aberto", DataComentario: "16/12/2022" },
-      { Comentario: "Aberto", DataComentario: "16/12/2022" },
-      { Comentario: "Aberto", DataComentario: "16/12/2022" },
-      { Comentario: "Aberto", DataComentario: "16/12/2022" },
-    ];
-
-    setComents({ Comentarios: comentsMock });
   };
 
   return (
     <S.ContainerHome>
       <h1>Pesquise a task</h1>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <S.FormGroupStyled controlId="form">
+        <S.FormGroupStyled controlId="Titulo">
           <Form.Control
             type="text"
             placeholder="Digite o código da task"
-            {...register("task")}
+            {...register("Titulo")}
           />
           <Button variant="primary" type="submit">
             Enviar
@@ -72,15 +44,7 @@ const Home: React.FC = () => {
         </S.FormGroupStyled>
       </Form>
       <S.TaskInformationWrapper>
-        {task ? (
-          <TaskInfos task={task} onClickComents={() => onSearchComents} />
-        ) : (
-          <p>Nenhuma task selecionada</p>
-        )}
-      </S.TaskInformationWrapper>
-
-      <S.TaskInformationWrapper>
-        {coments?.Comentarios ? <>nada</> : <ComentsInfos />}
+        {task ? <TaskInfos task={task} /> : <p>Nenhuma task selecionada</p>}
       </S.TaskInformationWrapper>
     </S.ContainerHome>
   );

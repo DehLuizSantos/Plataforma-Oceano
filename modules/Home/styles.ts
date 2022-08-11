@@ -23,9 +23,31 @@ export const FormGroupStyled = styled(Form.Group)`
 export const TaskInformationWrapper = styled.div`
     ${({theme}) => css`
       background-color: ${theme.colors.sheet};
+      box-shadow: 0px 10px 30px ${theme.colors.boxShadow};
       margin-top: 50px;
       padding: 30px;
       border-radius: 10px;
     `}
+
+`
+
+export const TaskInfosTable = styled.div`
+  ${({theme}) => css`
+    h2{
+      color: ${theme.colors.primary2};
+      font-size: ${theme.variants.font.sizes.sl};
+    }
+    .card-task{
+      display: flex;
+      gap: 5px;
+      p{
+        color:${theme.colors.text};
+      }
+      span {
+        color:${theme.colors.primary2};
+      }
+    }
+
+  `}
 
 `

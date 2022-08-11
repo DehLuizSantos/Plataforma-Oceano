@@ -32,5 +32,8 @@ export default {
       xl: pxToRem(22),
       sl: pxToRem(24)
     }
+  },
+  boxShadow: {
+    boxShadowCard: "0px 10px 30px #d1d5df",
   }
 } as const

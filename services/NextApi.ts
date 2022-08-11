@@ -16,6 +16,8 @@ type PostBody = {
     Squad: string,
 }
 
+
+
 export default class NextApi {
   private http: AxiosInstance
   constructor() {
@@ -24,9 +26,9 @@ export default class NextApi {
     })
   }
 
-  public async getAllTask(task: string) {
+  public async getTaskByTitle(params: string) {
     try {
-      const response: AxiosResponse = await this.http.get(`${task}`)
+      const response: AxiosResponse = await this.http.get(`getByTask`, {params: {Titulo: params }})
       return { data: response.data, error: false }
     } catch (error: import('axios').AxiosError | any) {
       if (error.response) {

@@ -10,7 +10,8 @@ export const dark = {
     sheet: "#373c36",
     danger: "#d9534f",
     success: "#5cb85c",
-    text: "#969ba1"
+    text: "#969ba1",
+    boxShadow: "#d1d5df"
   },
   variants: {...theme}
 }

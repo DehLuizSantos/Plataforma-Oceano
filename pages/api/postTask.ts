@@ -1,6 +1,5 @@
 import { connectToDatabase } from '../../config/mongodb';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { Tasks } from '../../services/tasksMock';
 
 const PostTask = async (req: NextApiRequest, res: NextApiResponse) => {
   const { BRM,
@@ -19,7 +18,8 @@ const PostTask = async (req: NextApiRequest, res: NextApiResponse) => {
 
   const { db } = await connectToDatabase()
   const collection = db.collection("tasks")
-  await collection.insertOne({
+
+  const collectionToInsert = {
       BRM,
       Consultor,
       Custos,
@@ -33,7 +33,8 @@ const PostTask = async (req: NextApiRequest, res: NextApiResponse) => {
       Titulo,
       Filial,
       Squad,
-  })
+  }
+  await collection.insertOne(collectionToInsert)
 
 
   res.status(200).json({status: "ok"})
