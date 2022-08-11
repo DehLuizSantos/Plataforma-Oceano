@@ -22,7 +22,7 @@ export default class NextApi {
   private http: AxiosInstance
   constructor() {
     this.http = axios.create({
-      baseURL: /* 'https://task-manager-iota-wheat.vercel.app/api' */'http://localhost:3000/api/'
+      baseURL: process.env.BASE_URL
     })
   }
 
