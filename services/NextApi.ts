@@ -22,14 +22,13 @@ export default class NextApi {
   private http: AxiosInstance
   constructor() {
     this.http = axios.create({
-      baseURL: process.env.BASE_URL,
-      withCredentials: true
+      baseURL: /* "http://localhost:3000/api" */"https://plataforma-oceano.vercel.app/api/"
     })
   }
 
   public async getTaskByTitle(params: string) {
     try {
-      const response: AxiosResponse = await this.http.get(`getByTask`, {params: {Titulo: params }})
+      const response: AxiosResponse = await this.http.get(`${params}`)
       return { data: response.data, error: false }
     } catch (error: import('axios').AxiosError | any) {
       if (error.response) {
