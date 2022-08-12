@@ -10,7 +10,7 @@ ${({ theme }) => css`
   border-radius: 6px;
   display: flex;
   justify-content: center;
-  left:10px;
+  right:10px;
   top: 80px;
   align-items: center;
   position: absolute;

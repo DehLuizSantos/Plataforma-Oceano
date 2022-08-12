@@ -8,6 +8,8 @@ import ToogleTheme from "../../components/ToogleTheme";
 import { useDispatch, useSelector } from "react-redux";
 import { selectToogle, setToogle } from "../../redux/store/toogleSlice";
 import { wrapper } from "../../redux/store/store";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 type Props = {
   children: JSX.Element;
@@ -27,6 +29,7 @@ const ApplicationProviders: React.FC<Props> = ({ children }) => {
         }
         toogleIcon={toogleState}
       />
+      <ToastContainer />
     </ThemeProvider>
   );
 };

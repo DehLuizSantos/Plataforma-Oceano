@@ -27,6 +27,9 @@ export const TaskInformationWrapper = styled.div`
       margin-top: 50px;
       padding: 30px;
       border-radius: 10px;
+      .image-loading{
+        margin: 0 auto;
+      }
     `}
 
 `

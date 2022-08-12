@@ -16,6 +16,11 @@ ${({theme}) => css`
     box-shadow: 0px 10px 30px #d1d5df;
     padding: 50px;
     border-radius: 10px;
+    .image-loading{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
      h1{
       font-size:${theme.variants.font.sizes.sl};
       font-weight:bold;
