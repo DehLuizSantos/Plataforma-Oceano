@@ -26,6 +26,7 @@ ${({theme}) => css`
       margin-bottom: 20px;
       border-bottom:1px solid ${theme.colors.primary};
       padding:5px;
+      color:${theme.colors.text};
     }
     .form-register{
       .row{
@@ -33,6 +34,10 @@ ${({theme}) => css`
         border:1px solid ${theme.colors.secundary2};
         padding:15px;
         margin:15px;
+      }
+      label.form-label{
+        color: ${theme.colors.secundary2};
+        font-weight: bold;
       }
     }
 `}

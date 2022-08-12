@@ -5,7 +5,7 @@ export const dark = {
     primary: "#0275d8",
     secundary: "#14e5b6",
     primary2: "#5bc0de",
-    secundary2: "#98ffe8",
+    secundary2: "#607cb9",
     background:"#292b2c",
     sheet: "#373c36",
     danger: "#d9534f",
