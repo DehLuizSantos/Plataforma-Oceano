@@ -11,7 +11,6 @@ export const ContainerRegister = styled.div`
 
 export const RegisterWrapper = styled.div`
 ${({theme}) => css`
-    margin: 10px 0;
     background: ${theme.colors.sheet};
     box-shadow: 0px 10px 30px #d1d5df;
     padding: 50px;
@@ -25,6 +24,16 @@ ${({theme}) => css`
       font-size:${theme.variants.font.sizes.sl};
       font-weight:bold;
       margin-bottom: 20px;
+      border-bottom:1px solid ${theme.colors.primary};
+      padding:5px;
+    }
+    .form-register{
+      .row{
+        border-radius:5px;
+        border:1px solid ${theme.colors.secundary2};
+        padding:15px;
+        margin:15px;
+      }
     }
 `}
 

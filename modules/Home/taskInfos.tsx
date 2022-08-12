@@ -23,6 +23,12 @@ type TaskPropsInfos = {
 const TaskInfos = ({ task }: TaskPropsInfos) => {
   return (
     <S.TaskInfosTable>
+      <Col>
+        <div className="card-task">
+          <span>Custos: </span>
+          <p>{task.Custos}</p>
+        </div>
+      </Col>
       <Row>
         <Col>
           <h2>{task.Titulo}</h2>
@@ -61,15 +67,6 @@ const TaskInfos = ({ task }: TaskPropsInfos) => {
             <span>Tempo Restante: </span>
             <p>{task.TempoRestante}</p>
           </div>
-        </Col>
-        <Col>
-          <div className="card-task">
-            <span>Custos: </span>
-            <p>{task.Custos}</p>
-          </div>
-          {/* <Button variant="secondary" size="sm" onClick={onClickComents}>
-            Ver comentarios
-          </Button> */}
         </Col>
       </Row>
     </S.TaskInfosTable>

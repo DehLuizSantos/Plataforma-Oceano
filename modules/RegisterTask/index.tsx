@@ -44,7 +44,7 @@ const RegisterTask = () => {
   return (
     <S.ContainerRegister>
       <S.RegisterWrapper>
-        <h1 style={{ margin: "10px" }}>Cadastre sua task</h1>
+        <h1>Cadastre sua task</h1>
         {loading ? (
           <div className="image-loading">
             <Image
@@ -55,9 +55,9 @@ const RegisterTask = () => {
             />
           </div>
         ) : (
-          <Form onSubmit={handleSubmit(onSubmit)}>
+          <Form onSubmit={handleSubmit(onSubmit)} className="form-register">
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Row style={{ margin: "20px 0px" }}>
+              <Row>
                 <Col sm={12} md={4} lg={3}>
                   <Form.Label>Titulo da Task</Form.Label>
                   <Form.Control
@@ -83,7 +83,7 @@ const RegisterTask = () => {
                   />
                 </Col>
               </Row>
-              <Row style={{ margin: "20px 0px" }}>
+              <Row>
                 <Col sm={12} md={4} lg={4}>
                   <Form.Label>Squad</Form.Label>
                   <Form.Control
@@ -109,7 +109,7 @@ const RegisterTask = () => {
                   />
                 </Col>
               </Row>
-              <Row style={{ margin: "20px 0px" }}>
+              <Row>
                 <Col sm={12} md={4}>
                   <Form.Label>Número da demanda</Form.Label>
                   <Form.Control
@@ -135,7 +135,7 @@ const RegisterTask = () => {
                   />
                 </Col>
               </Row>
-              <Row style={{ margin: "20px 0px" }}>
+              <Row>
                 <Col sm={12} md={4}>
                   <Form.Label>Data de Início</Form.Label>
                   <Form.Control

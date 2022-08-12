@@ -39,17 +39,29 @@ export const TaskInformationWrapper = styled.div`
 export const TaskInfosTable = styled.div`
   ${({theme}) => css`
     h2{
-      color: ${theme.colors.primary2};
+      color: ${theme.colors.primary};
       font-size: ${theme.variants.font.sizes.sl};
+      border-bottom: 1px solid ${theme.colors.primary};
+      text-align: center;
     }
     .card-task{
+      border: 1px solid ${theme.colors.primary};
       display: flex;
       gap: 5px;
+      border:1px solid ${theme.colors.text};
+      border-radius:5px;
+      justify-content: center;
+      align-items:center;
+      padding:2px;
+      margin:10px;
       p{
+        font-size:${theme.variants.font.sizes.sm};
         color:${theme.colors.text};
+        margin-bottom: 0;
       }
       span {
         color:${theme.colors.primary2};
+        font-size:${theme.variants.font.sizes.sm};
       }
     }
 
