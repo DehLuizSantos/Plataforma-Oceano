@@ -28,7 +28,9 @@ export const TaskInformationWrapper = styled.div`
       padding: 30px;
       border-radius: 10px;
       .image-loading{
-        margin: 0 auto;
+        display: flex;
+        justify-content:center;
+        align-items: center;
       }
     `}
 
