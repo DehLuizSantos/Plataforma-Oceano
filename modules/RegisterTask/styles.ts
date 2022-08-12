@@ -38,6 +38,7 @@ ${({theme}) => css`
       label.form-label{
         color: ${theme.colors.secundary2};
         font-weight: bold;
+        margin-top:15px;
       }
     }
 `}
