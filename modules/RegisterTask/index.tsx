@@ -7,10 +7,12 @@ import { Col, Row } from "react-bootstrap";
 import NextApi from "../../services/NextApi";
 import { toast } from "react-toastify";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const nextApi = new NextApi();
 
 const RegisterTask = () => {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
 
   const {
@@ -58,7 +60,7 @@ const RegisterTask = () => {
           <Form onSubmit={handleSubmit(onSubmit)} className="form-register">
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Row>
-                <Col sm={12} md={4} lg={3}>
+                <Col sm={12}>
                   <Form.Label>Titulo da Task</Form.Label>
                   <Form.Control
                     {...register("Titulo")}
@@ -66,7 +68,9 @@ const RegisterTask = () => {
                     placeholder="Titulo da Task"
                   />
                 </Col>
-                <Col sm={12} md={4} lg={3}>
+              </Row>
+              <Row>
+                <Col xm={12}>
                   <Form.Label>Filial da Task</Form.Label>
                   <Form.Control
                     {...register("Filial")}
@@ -74,7 +78,7 @@ const RegisterTask = () => {
                     placeholder="Filial da Task"
                   />
                 </Col>
-                <Col sm={12} md={4} lg={6}>
+                <Col xm={12}>
                   <Form.Label>Consultor</Form.Label>
                   <Form.Control
                     {...register("Consultor")}
@@ -84,7 +88,7 @@ const RegisterTask = () => {
                 </Col>
               </Row>
               <Row>
-                <Col sm={12} md={4} lg={4}>
+                <Col xm={6}>
                   <Form.Label>Squad</Form.Label>
                   <Form.Control
                     {...register("Squad")}
@@ -92,7 +96,7 @@ const RegisterTask = () => {
                     placeholder="Squad da Task"
                   />
                 </Col>
-                <Col sm={12} md={3}>
+                <Col xm={6}>
                   <Form.Label>Status</Form.Label>
                   <Form.Control
                     {...register("Status")}
@@ -110,15 +114,15 @@ const RegisterTask = () => {
                 </Col>
               </Row>
               <Row>
-                <Col sm={12} md={4}>
-                  <Form.Label>Número da demanda</Form.Label>
+                <Col xm={6}>
+                  <Form.Label>Demanda</Form.Label>
                   <Form.Control
                     {...register("NumDemanda")}
                     type="input"
                     placeholder="Número da demanda"
                   />
                 </Col>
-                <Col sm={12} md={4}>
+                <Col xm={6}>
                   <Form.Label>Estimativa</Form.Label>
                   <Form.Control
                     {...register("Estimativa")}
@@ -162,15 +166,32 @@ const RegisterTask = () => {
                 </Col>
               </Row>
             </Form.Group>
-            <div
-              style={{
-                margin: "10px",
-                textAlign: "end",
-              }}
-            >
-              <Button size="lg" variant="primary" type="submit">
-                Enviar formulario
-              </Button>
+            <div className="d-flex" style={{ justifyContent: "space-between" }}>
+              <div
+                style={{
+                  margin: "10px",
+                  textAlign: "start",
+                }}
+              >
+                <Button
+                  size="lg"
+                  variant="outline-primary"
+                  type="button"
+                  onClick={() => router.push({ pathname: "/" })}
+                >
+                  Voltar
+                </Button>
+              </div>
+              <div
+                style={{
+                  margin: "10px",
+                  textAlign: "end",
+                }}
+              >
+                <Button size="lg" variant="primary" type="submit">
+                  Enviar
+                </Button>
+              </div>
             </div>
           </Form>
         )}
